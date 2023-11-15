@@ -279,7 +279,7 @@ char *fmap_flags_to_string(uint16_t flags)
 			total_size += strlen(tmp);
 			str = realloc(str, total_size);
 			strcat(str, tmp);
-			
+
 			flags &= ~(1 << i);
 			if (flags) {
 				total_size++;
@@ -303,8 +303,8 @@ struct fmap *fmap_create(uint64_t base, uint32_t size, uint8_t *name)
 
 	memset(fmap, 0, sizeof(*fmap));
 	memcpy(&fmap->signature, FMAP_SIGNATURE, strlen(FMAP_SIGNATURE));
-	fmap->ver_major = VERSION_MAJOR;
-	fmap->ver_minor = VERSION_MINOR;
+	fmap->ver_major = FMAP_VER_MAJOR;
+	fmap->ver_minor = FMAP_VER_MINOR;
 	fmap->base = base;
 	fmap->size = size;
 	memccpy(&fmap->name, name, '\0', FMAP_STRLEN);
@@ -392,8 +392,8 @@ static struct fmap *fmap_create_test(void)
 		goto fmap_create_test_exit;
 	}
 
-	if ((fmap->ver_major != VERSION_MAJOR) ||
-	    (fmap->ver_minor != VERSION_MINOR)) {
+	if ((fmap->ver_major != FMAP_VER_MAJOR) ||
+	    (fmap->ver_minor != FMAP_VER_MINOR)) {
 		printf("FAILURE: version is incorrect\n");
 		goto fmap_create_test_exit;
 	}
