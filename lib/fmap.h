@@ -148,7 +148,7 @@ char *fmap_flags_to_string(uint16_t flags);
  * returns NULL to indicate failure
  */
 extern struct fmap *fmap_create(uint64_t base,
-                                uint32_t size, uint8_t *name);
+                                uint32_t size, const uint8_t *name);
 
 /* free memory used by an fmap structure */
 extern void fmap_destroy(struct fmap *fmap);

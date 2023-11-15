@@ -293,7 +293,7 @@ char *fmap_flags_to_string(uint16_t flags)
 }
 
 /* allocate and initialize a new fmap structure */
-struct fmap *fmap_create(uint64_t base, uint32_t size, uint8_t *name)
+struct fmap *fmap_create(uint64_t base, uint32_t size, const uint8_t *name)
 {
 	struct fmap *fmap;
 
