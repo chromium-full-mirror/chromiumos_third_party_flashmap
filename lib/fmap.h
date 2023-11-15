@@ -72,8 +72,7 @@ struct fmap {
 	uint64_t base;			/* address of the firmware binary */
 	uint32_t size;			/* size of firmware binary in bytes */
 	uint8_t  name[FMAP_STRLEN];	/* name of this firmware binary */
-	uint16_t nareas;		/* number of areas described by
-					   fmap_areas[] below */
+	uint16_t nareas;		/* number of areas in fmap_areas[] */
 	struct fmap_area areas[];
 } __attribute__((packed));
 
